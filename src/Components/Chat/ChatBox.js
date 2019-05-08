@@ -29,13 +29,13 @@ const ChatBox = ({ videoInfo, children }) => {
 							setMessage('');
 						})
 						.catch(err => {
-							console.log(err);
+							console.error(err);
 							setLoading(null);
 						});
 				}
 			})
 			.catch(err => {
-				console.info(err);
+				console.error(err);
 				window.location.reload();
 			});
 	}
