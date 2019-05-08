@@ -1,0 +1,369 @@
+$PrimaryBG: #f9f8fd;
+$PrimaryBoxShadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+
+* {
+	transition: all 0.3s ease-out;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Avenir, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+.Home__Container {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: auto;
+	transform: translateY(50vh);
+	.Button {
+		width: auto;
+		.Inner {
+			cursor: pointer;
+			background: url('https://image.flaticon.com/teams/slug/google.jpg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: left;
+			padding: 10px 10px 10px 35px;
+			border: 1px solid rgb(206, 206, 206);
+			&:hover {
+				box-shadow: $PrimaryBoxShadow;
+			}
+		}
+	}
+}
+
+.Stream__Container {
+	width: 90%;
+	margin: 0 auto;
+	.Header {
+		height: auto;
+		.Logo {
+			padding: 25px;
+			font-size: 21px;
+			span {
+				font-weight: 600;
+			}
+		}
+	}
+	.Viewer__Container {
+		flex: 1;
+		display: inline-flex;
+		flex-wrap: wrap;
+		width: 100%;
+		.Stream {
+			cursor: pointer;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			width: 100%;
+			.Thumb {
+				border-radius: 15px;
+				padding-bottom: 375px;
+				margin-right: 10px;
+				margin-left: 10px;
+				position: relative;
+				box-shadow: $PrimaryBoxShadow;
+				&::after {
+					content: '';
+					height: 25px;
+					width: 25px;
+					position: absolute;
+					top: 10px;
+					left: 10px;
+					border-radius: 100%;
+					background: rgb(212, 0, 0);
+					animation: Live 1s ease-out infinite;
+				}
+				&:hover {
+					box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
+				}
+			}
+			.Info {
+				margin-right: 10px;
+				margin-left: 10px;
+				h3 {
+					font-size: 1.4rem;
+					min-height: 2.8rem;
+					max-height: 2.8rem;
+					line-height: 1.4rem;
+					overflow: hidden;
+				}
+				p {
+					font-size: 1rem;
+					line-height: 1.2rem;
+					overflow: hidden;
+					max-height: 2.4rem;
+				}
+			}
+		}
+	}
+}
+
+.Video__Container {
+	width: 90%;
+	margin: 0 auto;
+	.Header {
+		height: auto;
+		.Logo {
+			padding: 25px;
+			font-size: 21px;
+			span {
+				font-weight: 600;
+			}
+		}
+	}
+	.CloseBtn {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		height: 25px;
+		width: 25px;
+		background: url(https://image.flaticon.com/icons/png/128/8/8934.png);
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+	.Inner {
+		flex: 1;
+		display: inline-flex;
+		flex-wrap: wrap;
+		width: 100%;
+		.Video {
+			width: 100%;
+			.iframe {
+				width: 100%;
+				height: 49vh;
+			}
+		}
+		.Chat {
+			width: calc(100%);
+			padding-top: 5px;
+			padding-left: 10px;
+			padding-right: 10px;
+			.Inner {
+				box-shadow: $PrimaryBoxShadow;
+				border-radius: 5px;
+				background: $PrimaryBG;
+				.ChatBox__Container {
+					position: relative;
+					width: 100%;
+					height: auto;
+					.ChatBox__Inner {
+						max-height: 70vh;
+						min-height: 69vh;
+						overflow: auto;
+						position: relative;
+						.Message__Container {
+							padding: 5px;
+							.Message__Inner {
+								flex: 1;
+								display: inline-flex;
+								flex-wrap: wrap;
+								width: calc(100% - 10px);
+								background: white;
+								border-radius: 15px;
+								box-shadow: $PrimaryBoxShadow;
+								padding: 5px;
+								.AuthorAvatar {
+									height: 50px;
+									width: 50px;
+									border-radius: 100%;
+									margin-right: 10px;
+								}
+								.Body {
+									position: relative;
+									width: calc(100% - 100px);
+									.AuthorName {
+										font-weight: 600;
+										width: auto;
+										max-width: calc(100%);
+										font-size: 12px;
+									}
+									.MessageBody {
+										max-width: calc(100%);
+										font-weight: 200;
+										font-size: 12px;
+									}
+									.Timestamp {
+										position: absolute;
+										top: 5px;
+										right: 5px;
+										font-size: 8px;
+									}
+								}
+							}
+						}
+					}
+					.MessageForm__Container {
+						position: relative;
+						.MessageForm__Inner {
+							width: calc(100% - 10px);
+							height: auto;
+							position: relative;
+							padding-top: 5vh;
+							padding-left: 5px;
+							padding-right: 5px;
+							padding-bottom: 2.5vh;
+							.MessageForm {
+								position: absolute;
+								bottom: 0;
+								flex: 1;
+								display: inline-flex;
+								flex-wrap: wrap;
+								width: calc(100% - 10px);
+								.Icon {
+									width: 50px;
+									height: 50px;
+									background: url(https://cdn.iconscout.com/icon/free/png-256/account-profile-avatar-man-circle-round-user-30452.png);
+									background-position: center;
+									background-size: contain;
+									background-repeat: no-repeat;
+									border-radius: 100%;
+									margin-right: 10px;
+								}
+								.IconLoading {
+									width: 50px;
+									height: 50px;
+									background: url(https://i.imgur.com/hXLbmmK.gif);
+									background-position: center;
+									background-size: contain;
+									background-repeat: no-repeat;
+									border-radius: 100%;
+									margin-right: 10px;
+								}
+								.Input {
+									width: calc(100% - 60px - 25%);
+									height: 16px;
+									background: transparent;
+									border: none;
+									border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+									box-shadow: none;
+									font-size: 16px;
+									resize: none !important;
+									line-height: 16px;
+									margin-top: 10px;
+								}
+								.Action {
+									cursor: pointer;
+									width: 24%;
+									height: 50px;
+									background: url(https://image.flaticon.com/icons/svg/60/60525.svg);
+									background-position: center;
+									background-size: 25%;
+									background-repeat: no-repeat;
+									border-radius: 100%;
+									&:hover {
+										transform: scale(1.05);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Larger than mobile screen */
+@media (min-width: 40rem) {
+	.Stream__Container {
+		.Viewer__Container {
+			.Stream {
+				width: 49.9999%;
+			}
+		}
+	}
+}
+
+/* Larger than tablet screen */
+@media (min-width: 80rem) {
+	.Stream__Container {
+		.Viewer__Container {
+			.Stream {
+				width: 33.3333%;
+			}
+		}
+	}
+	.Video__Container {
+		.Inner {
+			.Video {
+				width: 59.9999%;
+				.iframe {
+					height: 80vh;
+				}
+			}
+		}
+	}
+	.Video__Container {
+		.Inner {
+			.Chat {
+				width: calc(39.9999% - 20px);
+				.Inner {
+					min-height: 79vh;
+					max-height: 80vh;
+				}
+			}
+		}
+	}
+}
+
+/* Larger than desktop screen */
+@media (min-width: 120rem) {
+	.Stream__Container {
+		.Viewer__Container {
+			.Stream {
+				width: 33.3333%;
+			}
+		}
+	}
+	.Video__Container {
+		.Inner {
+			.Video {
+				width: 59.9999%;
+				.iframe {
+					height: 80vh;
+				}
+			}
+		}
+	}
+	.Video__Container {
+		.Inner {
+			width: calc(39.9999% - 20px);
+			.Inner {
+				min-height: 79vh;
+				max-height: 80vh;
+			}
+		}
+	}
+}
+
+@keyframes Live {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
