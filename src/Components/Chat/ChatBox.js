@@ -64,10 +64,12 @@ const ChatBox = ({ videoInfo, children }) => {
 						) : (
 							<div className='Icon' />
 						)}
-						<textarea
+						<input
 							value={message}
 							onChange={handleUpdate}
 							className='Input'
+							type='text'
+							placeholder='Start typing..'
 						/>
 						<div className='Action' onClick={handleSend} />
 					</div>
