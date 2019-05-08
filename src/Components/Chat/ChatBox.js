@@ -21,7 +21,7 @@ const ChatBox = ({ videoInfo, children }) => {
 					Auth.sendMessage(
 						videoInfo.items[0].liveStreamingDetails
 							.activeLiveChatId,
-						message
+						String(message)
 					)
 						.then(resp => {
 							console.info(resp);
